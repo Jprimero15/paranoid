@@ -3728,4 +3728,36 @@ public class WifiServiceImpl extends BaseWifiService {
                 .c(enable).flush();
         mFacade.setIntegerSetting(mContext, Settings.Global.WIFI_COVERAGE_EXTEND_FEATURE_ENABLED, (enable ? 1 : 0));
     }
+
+    @Override
+    public boolean isWhitelistNetworkRoamingFeatureEnabled() {
+        enforceAccessPermission();
+        return mFacade.getIntegerSetting(mContext, Settings.Global.WIFI_WHIELIST_ROAMING_FEATURE_ENABLED, 0) > 0 ;
+    }
+
+    @Override
+    public void enableWhitelistNetworkRoamingFeature(boolean enable) {
+        enforceAccessPermission();
+        enforceNetworkSettingsPermission();
+        mLog.info("enableWhitelistNetworkRoamingFeature uid=% enable=%")
+                .c(Binder.getCallingUid())
+                .c(enable).flush();
+        mFacade.setIntegerSetting(mContext, Settings.Global.WIFI_WHIELIST_ROAMING_FEATURE_ENABLED, (enable ? 1 : 0));
+    }
+
+    @Override
+    public boolean isUnsavedNetworkLinkingFeatureEnabled() {
+        enforceAccessPermission();
+        return mFacade.getIntegerSetting(mContext, Settings.Global.WIFI_UNSAVED_NETWORK_LINKING_FEATURE_ENABLED, 0) > 0 ;
+    }
+
+    @Override
+    public void enableUnsavedNetworkLinkingFeature(boolean enable) {
+        enforceAccessPermission();
+        enforceNetworkSettingsPermission();
+        mLog.info("enableUnsavedNetworkLinkingFeature uid=% enable=%")
+                .c(Binder.getCallingUid())
+                .c(enable).flush();
+        mFacade.setIntegerSetting(mContext, Settings.Global.WIFI_UNSAVED_NETWORK_LINKING_FEATURE_ENABLED, (enable ? 1 : 0));
+    }
 }
