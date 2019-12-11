@@ -2567,7 +2567,7 @@ public class SupplicantStaNetworkHal {
     }
 
     /** See ISupplicantStaNetwork.hal for documentation */
-    private boolean enable(boolean noConnect) {
+    public boolean enable(boolean noConnect) {
         synchronized (mLock) {
             final String methodStr = "enable";
             if (!checkISupplicantStaNetworkAndLogFailure(methodStr)) return false;
