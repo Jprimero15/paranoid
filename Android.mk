@@ -22,8 +22,6 @@ LOCAL_SRC_FILES := \
     Light.cpp \
     service.cpp
 
-LOCAL_C_INCLUDES := $(LOCAL_PATH)/include
-
 LOCAL_SHARED_LIBRARIES := \
     libbase \
     libbinder \
