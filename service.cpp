@@ -18,6 +18,7 @@
 
 #include <android-base/logging.h>
 #include <hidl/HidlTransportSupport.h>
+#include <hwbinder/ProcessState.h>
 #include <utils/Errors.h>
 
 #include "Light.h"
@@ -33,6 +34,8 @@ using android::sp;
 using android::status_t;
 
 int main() {
+    android::hardware::ProcessState::initWithMmapSize((size_t)(32768));
+
     sp<ILight> light = new Light();
 
     configureRpcThreadpool(1, true);
