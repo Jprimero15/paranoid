@@ -22,7 +22,7 @@
 #include <hidl/Status.h>
 #include <fstream>
 #include <unordered_map>
-#include "hlte_lolz_lights.h"
+#include "hlte_lights.h"
 
 namespace android {
 namespace hardware {

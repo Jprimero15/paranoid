@@ -32,11 +32,11 @@ LOCAL_SHARED_LIBRARIES := \
     libutils \
     android.hardware.light@2.0
 
-LOCAL_MODULE := android.hardware.light@2.0-service.samsung
-LOCAL_INIT_RC := android.hardware.light@2.0-service.samsung.rc
+LOCAL_MODULE := android.hardware.light@2.0-service.hlte
+LOCAL_INIT_RC := android.hardware.light@2.0-service.hlte.rc
 LOCAL_MODULE_RELATIVE_PATH := hw
 LOCAL_MODULE_TAGS := optional
-LOCAL_MODULE_OWNER := samsung
+LOCAL_MODULE_OWNER := hlte
 LOCAL_VENDOR_MODULE := true
 
 include $(BUILD_EXECUTABLE)
