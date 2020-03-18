@@ -425,8 +425,8 @@ bool btif_config_get_bin(const std::string& section, const std::string& key,
       config_get_string(*config, section, key, NULL);
 
   if (!value_str_from_config) {
-    LOG(WARNING) << __func__ << ": cannot find string for section " << section
-                 << ", key " << key;
+    VLOG(1) << __func__ << ": cannot find string for section " << section
+            << ", key " << key;
     return false;
   }
 
